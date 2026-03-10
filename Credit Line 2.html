@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Line - Redefining Financial Possibilities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Smooth transitions */
+        .transition-all-300 {
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero image overlay gradient */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        /* Button hover effect */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+box-shadow: 0 10px 25px -5px rgba(196, 31, 62, 0.4);
+        }
+        
+        /* Navigation link hover */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+background-color: #C41F3E;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown animation */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+        }
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown:hover .chevron {
+            transform: rotate(180deg);
+        }
+        .chevron {
+            transition: transform 0.2s ease;
+        }
+        
+        /* Card hover effects */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+/* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Maroon Color Palette */
+        .bg-maroon { background-color: #C41F3E; }
+        .bg-maroon-dark { background-color: #7A0A37; }
+        .bg-maroon-glow { background-color: #D94A64; }
+        .bg-maroon-pressed { background-color: #A81634; }
+        .bg-maroon-light { background-color: #FDE8EC; }
+        
+        .text-maroon { color: #C41F3E; }
+        .text-maroon-dark { color: #7A0A37; }
+        .text-maroon-glow { color: #D94A64; }
+        
+        .border-maroon { border-color: #C41F3E; }
+        
+        .hover\:bg-maroon:hover { background-color: #C41F3E; }
+        .hover\:bg-maroon-dark:hover { background-color: #7A0A37; }
+        .hover\:bg-maroon-light:hover { background-color: #FDE8EC; }
+        .hover\:text-maroon:hover { color: #C41F3E; }
+        .hover\:text-maroon-glow:hover { color: #D94A64; }
+        .hover\:border-maroon:hover { border-color: #C41F3E; }
+        
+        .shadow-maroon { box-shadow: 0 10px 25px -5px rgba(196, 31, 62, 0.4); }
+        
+        /* ====== NEW ANIMATIONS ====== */
+        
+        /* Hero animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes pulse-border {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(196, 31, 62, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(196, 31, 62, 0);
+            }
+        }
+        
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        @keyframes rotateIcon {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+        
+        @keyframes wave {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+        
+        /* Animation classes */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+        
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animate-pulse-border {
+            animation: pulse-border 2s ease-in-out infinite;
+        }
+        
+        /* Hero element delays */
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+        
+        /* Icon animations */
+        .icon-hover {
+            transition: all 0.3s ease;
+        }
+        .icon-hover:hover {
+            animation: iconBounce 0.5s ease;
+        }
+        
+        /* Service item animations */
+        .service-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+        }
+        .service-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Image zoom on hover */
+        .image-zoom {
+            overflow: hidden;
+        }
+        .image-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .image-zoom:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Button wave animation on hover */
+        .btn-wave {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-wave::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn-wave:hover::after {
+            width: 300px;'
+            
+            '
+            height: 300px;
+        }
+        
+        /* Stats number animation */
+        .stat-number {
+            display: inline-block;
+        }
+        
+        /* Reveal on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Social link animations */
+        .social-link {
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #C41F3E, #D94A64);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Card glow effect */
+        .card-glow {
+            position: relative;
+        }
+        .card-glow::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #C41F3E, #D94A64, #C41F3E);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+            filter: blur(10px);
+        }
+        .card-glow:hover::before {
+            opacity: 1;
+        }
+        
+        /* Navbar animation */
+        .nav-animate {
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero background parallax */
+        .parallax-bg {
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Scroll indicator animation */
+        @keyframes scroll-indicator {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+.scroll-indicator {
+            animation: scroll-indicator 2s ease-in-out infinite;
+        }
+        
+        /* ====== IMAGE SCROLLER STYLES ====== */
+        .image-scroller {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 0;
+        }
+        
+        .image-scroller-track {
+            display: flex;
+            gap: 16px;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+        
+        .image-scroller-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-50% - 8px));
+            }
+        }
+        
+        .scroller-card {
+            flex-shrink: 0;
+            width: 280px;
+            height: 180px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .scroller-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(196, 31, 62, 0.2);
+        }
+        
+        .scroller-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .scroller-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .scroller-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            color: white;
+        }
+        
+        .scroller-card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .scroller-card-desc {
+            font-size: 12px;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .scroller-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #C41F3E;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .image-scroller:hover .image-scroller-track {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="C:/Users/leoka/Downloads/credit line logo.png" alt="Credit Line Logo" class="h-10 mr-3 group-hover:scale-110 transition-transform duration-300 object-contain">
+                    <div class="flex flex-col">
+                        <span class="text-2xl font-bold text-gray-900 tracking-tight">Credit Line</span>
+                        <span class="text-xs text-gray-500 font-medium tracking-wide">Redefining financial freedom</span>
+                    </div> 
+                </div>
+
+<!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-maroon font-medium transition-colors">Home</a>
+                    <a href="#pricing" class="nav-link text-gray-700 hover:text-maroon font-medium transition-colors">Pricing</a>
+                    
+                    <!-- Developers Dropdown -->
+                    <div class="dropdown relative"> 
+                        /
+                        <button class="text-gray-700 hover:text-maroon font-medium flex items-center gap-1 transition-colors">
+                            Developers
+                            <svg class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 p-2">
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">Getting Started</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">API Reference</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">Go-Live KYC</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">SDKs & Libraries</a>
+                        </div>
+                    </div>
+
+<a href="#services" class="nav-link text-gray-700 hover:text-maroon font-medium transition-colors">Services</a>
+                    
+                    <!-- Company Dropdown -->
+                    <div class="dropdown relative">
+                        <button class="text-gray-700 hover:text-maroon font-medium flex items-center gap-1 transition-colors">
+                            Company
+                            <svg class="chevron w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 p-2">
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">About Us</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">Careers</a>
+                            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors text-sm text-gray-700">Blog</a>
+                        </div>
+                    </div>
+
+<a href="#contact" class="nav-link text-gray-700 hover:text-maroon font-medium transition-colors">Contact Us</a>
+                </div>
+
+                <!-- Auth Buttons -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button class="text-gray-700 hover:text-maroon font-medium transition-colors">Login</button>
+                    <button class="btn-primary bg-maroon text-white px-6 py-2.5 rounded-full font-medium hover:bg-maroon-dark transition-colors">
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-maroon focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Pricing</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Services</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Contact Us</a>
+                <div class="pt-4 flex flex-col gap-3">
+                    <button class="w-full text-center py-2 text-gray-700 font-medium">Login</button>
+<button class="w-full bg-maroon text-white px-6 py-3 rounded-full font-medium">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                <!-- Background Image -->
+                <div class="absolute inset-0">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop" 
+                         alt="Payment terminal" 
+                         class="w-full h-full object-cover">
+                    <div class="hero-overlay absolute inset-0"></div>
+                </div>
+                
+                <!-- Content -->
+                <div class="relative z-10 px-8 md:px-16 py-20 md:py-32 max-w-2xl">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up opacity-0">
+                        Simple and Secure Payments
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed animate-fade-in-up opacity-0" style="animation-delay: 0.2s;">
+                        Pay and get paid with Credit Line. It's the easy way to manage your money.
+                    </p>
+<button class="btn-primary bg-maroon text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 hover:bg-maroon-dark transition-colors animate-fade-in-up opacity-0 animate-pulse-border btn-wave" style="animation-delay: 0.4s;">
+                        Get Started
+                        <svg class="w-5 h-5 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Scroller Section -->
+    <section class="image-scroller">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+            <h3 class="text-lg font-semibold text-gray-700 mb-2">Explore Our Services</h3>
+        </div>
+        <div class="image-scroller-track">
+            <!-- Card 1 - Payment Terminal -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Payment Solutions">
+                <span class="scroller-badge">Popular</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Payment Solutions</div>
+                    <div class="scroller-card-desc">Secure and fast transactions</div>
+                </div>
+            </div>
+            
+            <!-- Card 2 - Mobile Banking -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop" alt="Mobile Banking">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Mobile Banking</div>
+                    <div class="scroller-card-desc">Bank on the go</div>
+                </div>
+            </div>
+            
+            <!-- Card 3 - Credit Cards -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1559722813-d0c8e130d07f?w=400&h=300&fit=crop" alt="Credit Cards">
+                <span class="scroller-badge">New</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Credit Cards</div>
+                    <div class="scroller-card-desc">Rewards and benefits</div>
+                </div>
+            </div>
+            
+            <!-- Card 4 - Online Shopping -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=400&h=300&fit=crop" alt="Online Payments">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Online Payments</div>
+                    <div class="scroller-card-desc">Shop safely online</div>
+                </div>
+            </div>
+            
+            <!-- Card 5 - Business Finance -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Business Finance">
+                <span class="scroller-badge">Business</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Business Finance</div>
+                    <div class="scroller-card-desc">Grow your business</div>
+                </div>
+            </div>
+            
+            <!-- Card 6 - Contactless Payment -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=400&h=300&fit=crop" alt="Contactless Payment">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Contactless Payment</div>
+                    <div class="scroller-card-desc">Tap and pay instantly</div>
+                </div>
+            </div>
+            
+            <!-- Card 7 - ATM Services -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop" alt="ATM Services">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">ATM Services</div>
+                    <div class="scroller-card-desc">Withdraw anytime</div>
+                </div>
+            </div>
+            
+            <!-- Card 8 - Investment -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop" alt="Investment">
+                <span class="scroller-badge">Featured</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Investment</div>
+                    <div class="scroller-card-desc">Grow your wealth</div>
+                </div>
+            </div>
+            
+            <!-- Duplicate cards for seamless loop -->
+            <!-- Card 1 - Payment Terminal -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Payment Solutions">
+                <span class="scroller-badge">Popular</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Payment Solutions</div>
+                    <div class="scroller-card-desc">Secure and fast transactions</div>
+                </div>
+            </div>
+            
+            <!-- Card 2 - Mobile Banking -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop" alt="Mobile Banking">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Mobile Banking</div>
+                    <div class="scroller-card-desc">Bank on the go</div>
+                </div>
+            </div>
+            
+            <!-- Card 3 - Credit Cards -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1559722813-d0c8e130d07f?w=400&h=300&fit=crop" alt="Credit Cards">
+                <span class="scroller-badge">New</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Credit Cards</div>
+                    <div class="scroller-card-desc">Rewards and benefits</div>
+                </div>
+            </div>
+            
+            <!-- Card 4 - Online Shopping -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=400&h=300&fit=crop" alt="Online Payments">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Online Payments</div>
+                    <div class="scroller-card-desc">Shop safely online</div>
+                </div>
+            </div>
+            
+            <!-- Card 5 - Business Finance -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop" alt="Business Finance">
+                <span class="scroller-badge">Business</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Business Finance</div>
+                    <div class="scroller-card-desc">Grow your business</div>
+                </div>
+            </div>
+            
+            <!-- Card 6 - Contactless Payment -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1515942400420-2b98fed1f515?w=400&h=300&fit=crop" alt="Contactless Payment">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Contactless Payment</div>
+                    <div class="scroller-card-desc">Tap and pay instantly</div>
+                </div>
+            </div>
+            
+            <!-- Card 7 - ATM Services -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=400&h=300&fit=crop" alt="ATM Services">
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">ATM Services</div>
+                    <div class="scroller-card-desc">Withdraw anytime</div>
+                </div>
+            </div>
+            
+            <!-- Card 8 - Investment -->
+            <div class="scroller-card">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=300&fit=crop" alt="Investment">
+                <span class="scroller-badge">Featured</span>
+                <div class="scroller-card-overlay">
+                    <div class="scroller-card-title">Investment</div>
+                    <div class="scroller-card-desc">Grow your wealth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Credit Line?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Experience the future of payments with our secure, fast, and reliable platform.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center mb-6 icon-hover">
+                        <svg class="w-7 h-7 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bank-Grade Security</h3>
+                    <p class="text-gray-600 leading-relaxed">Your transactions are protected with 256-bit encryption and PCI DSS Level 1 compliance.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 icon-hover">
+                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Transfers</h3>
+                    <p class="text-gray-600 leading-relaxed">Send and receive money in real-time, 24/7. No more waiting for business days.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 icon-hover">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Zero Hidden Fees</h3>
+                    <p class="text-gray-600 leading-relaxed">Transparent pricing with no surprises. What you see is what you pay.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Everything you need to accept payments</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        From online payments to in-store purchases, Credit Line provides a complete payment solution for businesses of all sizes.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+<div class="w-12 h-12 bg-maroon-light rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Payment Gateway</h4>
+                                <p class="text-gray-600 text-sm">Accept cards, digital wallets, and bank transfers online.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Mobile Payments</h4>
+                                <p class="text-gray-600 text-sm">Accept payments on-the-go with our mobile app.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Detailed Analytics</h4>
+                                <p class="text-gray-600 text-sm">Track sales, refunds, and customer behavior in real-time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gray-100 rounded-3xl p-8 relative overflow-hidden image-zoom">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=500&fit=crop" 
+                             alt="Credit card payment" 
+                             class="rounded-2xl shadow-lg w-full object-cover">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3 animate-float">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500">Payment Successful</div>
+                                <div class="font-bold text-gray-900">MWK100,000.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-maroon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">MWK2B+</div>
+<div class="text-pink-100">Transactions Processed</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">50k+</div>
+                    <div class="text-pink-100">Active Businesses</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">99.9%</div>
+                    <div class="text-pink-100">Uptime Guaranteed</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-pink-100">Customer Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Ready to simplify your payments?</h2>
+            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                Join thousands of businesses already using Credit Line to power their payment infrastructure.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary bg-maroon text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-maroon-dark transition-colors flex items-center justify-center gap-2">
+                    Get Started Now
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </button>
+<button class="px-10 py-4 rounded-full font-semibold text-lg border-2 border-gray-300 text-gray-700 hover:border-maroon hover:text-maroon transition-colors">
+                    Contact Sales
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="C:/Users/leoka/Downloads/credit line logo.png" alt="Credit Line Logo" class="h-10 mr-3 object-contain">
+                        <span class="text-2xl font-bold text-gray-900">Credit Line</span>
+                    </div>
+                    <p class="text-gray-600 mb-4 max-w-sm">
+                        Redefining financial possibilities
+                    </p>
+<div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-maroon-light hover:text-maroon transition-colors text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-maroon-light hover:text-maroon transition-colors text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-maroon-light hover:text-maroon transition-colors text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Product</h4>
+<ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-maroon transition-colors">Payments</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Payouts</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Invoicing</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Subscriptions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">ers</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-maroon transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">API Reference</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">SDKs</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Status</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Company</h4>
+                    <ul class="space-y-3 text-gray-600">
+                        <li><a href="#" class="hover:text-maroon transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-maroon transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2024 Credit Line Inc. All rights reserved.</p>
+<div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-maroon transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-maroon transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-maroon transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+    <script src="script.js" defer></script>
+</body>
+</html>
